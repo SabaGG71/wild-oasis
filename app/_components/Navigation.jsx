@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { auth } from "../_lib/auth";
 import ClientNav from "./ClientNav";
@@ -19,7 +18,7 @@ export default async function Navigation() {
               href="/account"
               className="hover:text-accent-400 max-lg:text-primary-950 max-lg:mx-12 flex items-center gap-4 max-md:text-primary-950 transition-colors"
             >
-              <Image
+              <img
                 className="h-8 rounded-full"
                 src={session.user.image}
                 alt={session.user.name}
