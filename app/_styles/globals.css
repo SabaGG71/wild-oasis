@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body {
+  overscroll-behavior: none;
+}
+::selection {
+  background-color: #b78343;
+}
+@layer components {
+  .spinner {
+    margin: 3.2rem auto 1.6rem;
+    width: 60px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 8px solid theme("colors.primary.900");
+    border-right-color: theme("colors.primary.200");
+    animation: rotate 1s infinite linear;
+  }
+  .DayPicker-NavButton svg {
+    fill: #b78343; /* Tailwind blue-600 */
+  }
+  .spinner-mini {
+    margin: 0;
+    width: 20px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 2px solid theme("colors.primary.200");
+    border-right-color: transparent;
+    animation: rotate 1s infinite linear;
+  }
+
+  @keyframes rotate {
+    to {
+      transform: rotate(1turn);
+    }
+  }
+}
+
+/* For data picker */
+.rdp {
+  --rdp-cell-size: 32px !important;
+  --rdp-accent-color: theme("colors.accent.500") !important;
+  --rdp-background-color: theme("colors.accent.600") !important;
+  margin: 0 !important;
+}
+.rdp-selected {
+  background-color: #000;
+}
+.rdp-day[data-today] {
+  color: #fff !important;
+  background-color: #b7834338 !important;
+  border-radius: 50px;
+  font-weight: bold !important;
+  border: none !important;
+}
+.rdp-day[data-selected] {
+  background-color: #b78343 !important;
+  border-radius: 50px !important;
+  /* სელექთის ფონის ფერი */
+  color: white !important; /* სელექთის ტექსტის ფერი */
+}
+.rdp-day:focus,
+.rdp-day:focus-visible,
+.rdp-day:active,
+.rdp {
+  outline: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  --rdp-accent-color: transparent !important;
+}
+
+.rdp-day[data-selected] {
+  outline: none !important;
+}
